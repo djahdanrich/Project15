@@ -252,21 +252,31 @@ Tracks are fixed per race position. Players learn the roads across runs — the 
 
 ## 9. Story & Narrative
 
-### Premise
+> No story mode in v1.0. Narrative flavour is delivered entirely through pre- and post-race screens — inspired by the trainer battle intro in Pokémon Stadium 2.
 
-TBD
+### Narrative Delivery — Pre-Race Screen
 
-### Act Structure
+Before each race the player sees a card-style screen:
 
-| Act | Summary |
-|-----|---------|
-| Act 1 | TBD |
-| Act 2 | TBD |
-| Act 3 | TBD |
+1. **Run history** — a brief log of the races completed this run (rival name, car, result)
+2. **Rival portrait** — ASCII art of their car, centred
+3. **Rival flavour text** — 1–2 lines in their voice. Cocky, dismissive, confident, or quietly threatening depending on personality. Displayed like a terminal print-out.
+
+This screen makes each rival feel like a character without cutscenes or dialogue systems. The tone is set by text alone.
+
+### Narrative Delivery — Post-Loss Screen
+
+When the player loses:
+
+1. **Rival portrait** — same ASCII car art
+2. **Victory flavour text** — their line on winning. Taunting, cold, surprised, or contemptuous.
+3. **Run summary** — how far they got, which rivals they beat
+
+Ryuji Kaido (boss) gets distinct, weightier flavour text — he's the wall everyone knows about.
 
 ### Themes
 
-TBD
+Speed, pride, the cost of a single mistake. The run is short — everything is on the line every corner.
 
 ---
 
@@ -274,12 +284,32 @@ TBD
 
 ### Player Character
 
-| Field | Value |
-|-------|-------|
-| **Name** | TBD |
-| **Role** | TBD |
-| **Motivation** | TBD |
-| **Abilities** | TBD |
+No named player character in v1.0. The player is defined by their car and their run. No portrait, no voice, no flavour text — the rivals do all the talking.
+
+### Rival Flavour Text
+
+Each rival needs **2 lines of flavour text** — one pre-race (their personality before the battle) and one post-loss (their reaction if they beat you). Written to feel like a real person, not a video game archetype.
+
+Flavour text TBD for all 15 rivals and Ryuji Kaido. Kaido gets 3–4 lines — weightier, more considered. He doesn't boast.
+
+| Rival | Pre-Race Line | Post-Loss Line |
+|-------|--------------|----------------|
+| Yuta Kondo | TBD | TBD |
+| Dex Cruz | TBD | TBD |
+| Jake Stone | TBD | TBD |
+| Kenji Hara | TBD | TBD |
+| Rico Vega | TBD | TBD |
+| Sho Tanaka | TBD | TBD |
+| Naoto Ishida | TBD | TBD |
+| Cole Nash | TBD | TBD |
+| Hiro Watanabe | TBD | TBD |
+| Kazuma Mori | TBD | TBD |
+| Ace Dominguez | TBD | TBD |
+| Ryo Takase | TBD | TBD |
+| Cain Mercer | TBD | TBD |
+| Haruki Soma | TBD | TBD |
+| Taka Nishida | TBD | TBD |
+| **Ryuji Kaido** | TBD | TBD |
 
 ### Rivals
 
@@ -389,13 +419,35 @@ Max 8 inputs: 4-directional d-pad + 4 action buttons. Designed for on-screen tou
 | Action: Brake | Brake | Trail brake (initiation QTE step) |
 | Action: Handbrake | — | Break rear traction (initiation QTE trigger) |
 
-### HUD Elements
+### Screen Flow
 
-TBD
+```
+[Main Menu]
+    → [Car Select / Garage]
+        → [Pre-Race Card]
+            → rival portrait + run history + flavour text
+        → [Race]
+            → win  → [Part Reward Screen] → [Pre-Race Card] (next rival)
+            → lose → [Post-Loss Card]
+                        → rival portrait + victory text + run summary
+                     → [Main Menu / Retry]
+```
 
-### Menus & Flows
+### Pre-Race Card
 
-TBD
+Displayed as a terminal print-out. Elements:
+- **Header:** Race number, track name, tier
+- **Run log:** Previous rivals beaten this run (name + car)
+- **Rival block:** ASCII car portrait, rival name, car name
+- **Flavour text:** 1–2 lines in rival's voice — rendered one character at a time (typewriter effect)
+
+### Post-Loss Card
+
+Same layout as pre-race card but rival's victory line replaces their pre-race boast. Run summary appended below.
+
+### HUD Elements (During Race)
+
+TBD — minimal; speed, gear, ghost delta time, drift score live counter, 2-axis drift zone UI.
 
 ### Accessibility Considerations
 
