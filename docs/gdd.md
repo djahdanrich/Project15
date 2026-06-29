@@ -124,14 +124,22 @@ The run is a linear chain of 6 races. Races 1–5 each draw a rival randomly fro
 
 **What:** Entering a corner triggers a quick time event to initiate the drift.
 
-**How:** As the corner approaches, a prompt appears. The player must press the handbrake (action button) + the correct turn direction within the timing window. The score awarded for initiation scales with:
+**How:** As the corner approaches, the QTE fires. The player executes the initiation sequence in order:
+
+1. **Gear down** (D-pad Down) + **Clutch tap** — weight transfer prep, shift into the corner
+2. **Brake tap** — trail brake to pitch weight to the rear
+3. **Handbrake** — break rear traction, initiate the slide
+4. **Counter-steer** (L/R d-pad) — catch the car
+
+Initiation score scales with:
 - **Timing accuracy** — how close to the ideal initiation point
-- **Entry speed** — faster entry = higher score multiplier (governed by Engine part)
-- **Braking input** — correct brake pressure widens the timing window (governed by Brakes part)
+- **Entry speed** — faster entry = higher multiplier (governed by Engine part)
+- **Brake input quality** — correct trail brake widens the timing window (governed by Brakes part)
+- **Clutch timing** — hitting the clutch kick cleanly adds a bonus score (governed by Differential part)
 
-A clean initiation transitions immediately into the drift maintenance phase. A mistimed initiation either understeers (wasted corner, time loss) or spins out (race over).
+A clean sequence transitions into drift maintenance. A mistimed sequence either understeers (wasted corner, time loss) or spins out (run over).
 
-**Why:** Replaces the need for 3D physics. The QTE is the "turn-in" moment — the skill expression lives in the timing, not in analog stick precision.
+**Why:** Each step maps to a real drift technique — clutch kick, trail brake, handbrake flick, counter-steer. The QTE is the turn-in moment compressed into taps. Skill lives in the sequence and timing, not analog precision.
 
 ---
 
@@ -139,22 +147,24 @@ A clean initiation transitions immediately into the drift maintenance phase. A m
 
 **What:** Once a drift is initiated, the player holds it through the corner by keeping an angle indicator inside a moving sweet spot — inspired by the Stardew Valley fishing minigame.
 
-**How:** A balance bar appears on screen. An angle marker drifts left or right — the player taps left/right inputs to keep it inside the sweet spot zone. 
+**How:** A balance bar appears. An angle marker drifts based on the car's momentum. The player taps **Accelerate** to push the marker one way (more throttle = more angle) and uses **Left/Right** d-pad to correct direction and pull the marker back. The goal is to keep the marker inside the sweet spot zone.
 
-- **Stay in zone** → score accumulates per frame, drift continues
-- **Drift to edge** → score stops, warning state
-- **Exit zone entirely** → spin out, race over
-- **Exit corner naturally** → drift ends, score is banked
+- **Stay in zone** → score accumulates, drift holds
+- **Drift to edge** → score pauses, warning state
+- **Exit zone** → spin out, run over
+- **Exit corner cleanly** → drift ends, score banked
 
-The sweet spot zone width and marker drift speed are governed by parts:
+The accelerator is the primary input — it controls rear wheel traction and therefore drift angle, which is mechanically authentic. Left/Right is the coarser correction to keep the car pointing the right way.
+
+The sweet spot zone and marker behaviour are governed by parts:
 
 | Part | Effect on Maintenance |
 |------|-----------------------|
 | Tyres | Wider sweet spot zone |
-| Differential | Slower marker drift (more forgiving corrections) |
-| ECU | Score multiplier on all points banked from this drift |
+| Differential | Slower marker drift (more forgiving to hold) |
+| ECU | Score multiplier on all points banked |
 
-**Why:** Keeps the player actively engaged through the corner without requiring spatial physics. The rhythm of tapping to hold an angle mirrors the real feel of counter-steering a drift.
+**Why:** The throttle IS the drift in real life — feathering it is what holds the angle. Mapping the fishing minigame to the accelerator rather than left/right makes every tap feel purposeful and grounded.
 
 ---
 
@@ -180,7 +190,7 @@ Chained drifts (consecutive corners without fully straightening) apply a combo m
 |------|------------------|-------------------|
 | **Tyres** | — | Wider sweet spot zone |
 | **Engine** | Higher entry speed multiplier | — |
-| **Differential** | — | Slower angle marker drift |
+| **Differential** | Clutch kick bonus score | Slower angle marker drift |
 | **Brakes** | Wider QTE timing window | — |
 | **ECU** | — | Score multiplier on banked drifts |
 
@@ -310,12 +320,14 @@ Each category has multiple tiers (exact count TBD). Higher-tier parts drop from 
 
 Max 8 inputs: 4-directional d-pad + 4 action buttons. Designed for on-screen touch controls (mobile) with keyboard equivalents.
 
-| Input | Action |
-|-------|--------|
-| Left / Right | Steer |
-| Up / Down | Accelerate / Brake |
-| Action 1 | Handbrake (drift initiation) |
-| Action 2–4 | TBD |
+| Input | Normal Driving | During Drift |
+|-------|---------------|-------------|
+| D-pad Left / Right | Steer | Counter-steer (direction correction) |
+| D-pad Up / Down | Gear up / Gear down | — |
+| Action: Accelerate | Throttle | Throttle feathering — **the fishing minigame input** |
+| Action: Clutch | Clutch | Clutch kick (initiation QTE step) |
+| Action: Brake | Brake | Trail brake (initiation QTE step) |
+| Action: Handbrake | — | Break rear traction (initiation QTE trigger) |
 
 ### HUD Elements
 
