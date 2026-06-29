@@ -55,7 +55,7 @@ Project 15 is a pseudo-3D retro street racer with roguelite progression, built e
 |-------|-------|
 | **Primary Genre** | Racing |
 | **Sub-genre(s)** | Roguelite, Pseudo-3D, Arcade Racer |
-| **Platform(s)** | TBD |
+| **Platform(s)** | Web (HTML5 → itch.io), Windows/Linux; mobile (Android/iOS) stretch goal |
 | **Engine** | Godot 4 |
 | **Rendering Architecture** | Single RichTextLabel — fully code-driven pseudo-3D renderer |
 | **Target Resolution / Frame Rate** | TBD |
@@ -188,15 +188,25 @@ TBD
 
 ### Player Skill Progression
 
-TBD
+No persistent power. The only thing that carries between runs is the player's knowledge of track layouts, rival patterns, and part synergies. Skill is the progression.
 
-### Character / Account Progression
+### Run Structure
 
-TBD
+A run is **5 races** against rival drivers. The branching structure (linear vs OutRun-style fork) is TBD — see Open Questions.
 
-### Unlock / Reward Structure
+### Parts System
 
-TBD
+There are **5 part categories**. Winning a race rewards one or more parts from the pool. The player chooses which to install before the next race.
+
+| Category | Role |
+|----------|------|
+| **Tyres** | Grip, cornering ability, surface handling |
+| **Engine** | Top speed, acceleration curve |
+| **Differential** | Power distribution, oversteer/understeer balance |
+| **Brakes** | Braking distance, late-braking window |
+| **ECU** | Tuning multiplier — amplifies other installed parts |
+
+Each category has multiple tiers (exact count TBD). Higher-tier parts drop from harder races. Installing a part is permanent for the run — no swapping back.
 
 ---
 
@@ -273,8 +283,9 @@ TBD
 
 | # | Question | Owner | Due |
 |---|----------|-------|-----|
-| 1 | What is the target platform — PC only, or also mobile/web? | Daniel | — |
-| 2 | How many races in a full run / how deep is the OutRun branch tree? | Daniel | — |
-| 3 | How many parts categories are there and how granular is the upgrade system? | Daniel | — |
+| 1 | ~~What is the target platform?~~ **Resolved:** Web/HTML5 (itch.io) + Windows/Linux; mobile stretch goal. | Daniel | — |
+| 2 | ~~How many races per run?~~ **Resolved:** 5 races against rivals. Branch structure (linear vs fork) still TBD — see #6. | Daniel | — |
+| 3 | ~~How many part categories?~~ **Resolved:** 5 — Tyres, Engine, Differential, Brakes, ECU. Tier count per category TBD. | Daniel | — |
 | 4 | ~~Does the game have a working title beyond "Project 15"?~~ **Resolved:** "Project 15" is the title — homage to NFS (2015). | Daniel | — |
 | 5 | Is there a rival/opponent identity system (named drivers, recurring characters) or purely mechanical AI? | Daniel | — |
+| 6 | Is the 5-race run structure linear (race 1 → 2 → 3 → 4 → 5) or OutRun-style branching forks? | Daniel | — |
