@@ -298,9 +298,21 @@ Each tier has a pool of 3 rivals drawn randomly per run. Car and behavioural pro
 
 > *How does the player grow — in skill, power, story, and/or unlocks?*
 
+### Meta Progression — Car Unlocks
+
+Car unlocks are the **only** persistent progression between runs. Completing a run unlocks the next car. Each car has different base handling stats — the stock feel is unique per car, which changes which parts you prioritise in a run.
+
+The player starts with a beat-up **BMW M3** (stock, rough around the edges). Completing a run on any car unlocks the next. Car roster TBD — see Open Questions.
+
+| State | What carries over |
+|-------|------------------|
+| Win a race | Parts installed (within run only) |
+| Lose a race | Nothing — back to stock |
+| Complete a run | Next car unlocked (permanent) |
+
 ### Player Skill Progression
 
-No persistent power. The only thing that carries between runs is the player's knowledge of track layouts, rival patterns, and part synergies. Skill is the progression.
+Beyond car unlocks, the only thing that carries between runs is the player's knowledge — track layouts, rival patterns, part synergies per car, and when to push the throttle deep. Skill is the progression.
 
 ### Run Structure
 
@@ -362,10 +374,59 @@ TBD
 
 | Field | Value |
 |-------|-------|
-| **Visual Style** | TBD |
-| **Colour Palette** | TBD |
-| **Reference Titles / Art** | TBD |
-| **Camera Perspective** | TBD |
+| **Visual Style** | Dark terminal / code-driven pseudo-3D; car is the visual hero |
+| **Colour Palette** | 8-colour soft terminal palette — muted, low-contrast, dark background |
+| **Reference Titles / Art** | OutRun (road rendering), Initial D (car identity), NFS 2015 (tone/night aesthetic) |
+| **Camera Perspective** | Behind-car, pseudo-3D first-person road view |
+| **Post Processing** | CRT shader (pre-built, applied globally) |
+| **Time of Day** | Night only |
+
+---
+
+### The Car is the Visual Hero
+
+The car ASCII silhouette is the primary visual element — it sits large and centred in the frame. The road and environment exist to give it context and convey speed, not the other way around. The player must be able to recognise a Silvia from an RX-7 from an AE86 at a glance. Each car model has a distinct multi-line ASCII side-profile built from RichTextLabel BBCode characters.
+
+Car silhouettes are coloured using the soft palette — the car's body colour is the dominant warm tone on screen. As parts are installed, the silhouette updates: a new spoiler appears, wider tyres, body kit lines. The car visually reflects its build state.
+
+---
+
+### Colour Palette
+
+8 colours total. Soft, muted — akin to a dark-mode developer UI rather than arcade neon. No pure whites or saturated primaries.
+
+| Role | Colour | Usage |
+|------|--------|-------|
+| **Background** | Deep charcoal navy | Sky, negative space, UI background |
+| **Road surface** | Muted slate grey | Road fill |
+| **Road markings** | Warm off-white | Centre lines, road edges |
+| **Road stripes** | Soft amber | Alternating OutRun-style road bands |
+| **Environment** | Muted sage | Treeline, mountain silhouettes, guardrail posts |
+| **Car body** | Soft coral / periwinkle | Player car (varies by car model) |
+| **Rival / ghost** | Muted lavender | Rival car representation |
+| **UI / accent** | Cool teal | HUD elements, score, warnings |
+
+Exact hex values TBD during implementation. All 8 colours must remain readable against the deep charcoal background at the CRT shader's intensity.
+
+---
+
+### Road Rendering (Pseudo-3D)
+
+OutRun-style horizontal band rendering. The road is drawn as stacked rows of characters, each row narrower toward the top to suggest a vanishing point. Road bands alternate between two tones (road surface + stripe) to convey forward motion as they scroll.
+
+Japanese mountain touge elements layered on top:
+- Armco guardrail characters along road edges
+- Treeline silhouette row above the road horizon
+- Tunnel mouth (character block arch) for specific corner types
+- Mountain ridge outline at the skyline
+
+The environment is sparse — enough to read as a touge pass, not so much it competes with the car.
+
+---
+
+### Drift Zone UI
+
+The 2-axis drift maintenance box is rendered in-world, overlaid on the lower portion of the screen. Soft teal outline box, coral reticle marker. The box visually shrinks on the throttle axis as depth increases — the tightening zone is legible at a glance without needing text labels.
 
 ---
 
@@ -423,3 +484,5 @@ TBD
 | 6 | ~~Linear vs branching run structure?~~ **Resolved:** Linear 6-race chain — races 1–5 randomised rivals, race 6 fixed boss. | Daniel | — |
 | 7 | ~~Rival pool size?~~ **Resolved:** 3 rivals per tier, 15 total + 1 boss. | Daniel | — |
 | 8 | ~~Boss identity?~~ **Resolved:** Boss is **Ryuji Kaido**. All 15 rivals named — mix of Japanese (Initial D), American English, and F&F Latino styles. Car/behavioural profiles TBD. | Daniel | — |
+| 9 | Car roster — which models are in the game? Starting car is BMW M3. What are the unlock cars and how many total? | Daniel | — |
+| 10 | Do visual part upgrades (body kit, spoiler, wheels) exist alongside mechanical parts, or does the silhouette update when mechanical parts are installed? | Daniel | — |
