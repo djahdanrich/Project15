@@ -174,11 +174,36 @@ TBD
 | **Motivation** | TBD |
 | **Abilities** | TBD |
 
-### Key NPCs
+### Rivals
 
-| Name | Role | Relationship to Player |
-|------|------|------------------------|
-| TBD | | |
+Each tier has a pool of 3 rivals drawn randomly per run. Car and behavioural profiles TBD.
+
+| Tier | # | Name | Style |
+|------|---|------|-------|
+| 1 | 1 | Yuta Kondo | Japanese |
+| 1 | 2 | Dex Cruz | American |
+| 1 | 3 | Marco Solis | American |
+| 2 | 1 | Kenji Hara | Japanese |
+| 2 | 2 | Rico Vega | American |
+| 2 | 3 | Sho Tanaka | Japanese |
+| 3 | 1 | Naoto Ishida | Japanese |
+| 3 | 2 | Cole Reyes | American |
+| 3 | 3 | Hiro Watanabe | Japanese |
+| 4 | 1 | Kazuma Mori | Japanese |
+| 4 | 2 | Ace Dominguez | American |
+| 4 | 3 | Ryo Takase | Japanese |
+| 5 | 1 | Dante Reyes | American |
+| 5 | 2 | Haruki Soma | Japanese |
+| 5 | 3 | Taka Nishida | Japanese |
+
+### Boss — Race 6
+
+| Field | Value |
+|-------|-------|
+| **Name** | Ryuji Kaido |
+| **Style** | Japanese |
+| **Role** | The fixed final opponent — every run ends here |
+| **Car / Profile** | TBD |
 
 ---
 
@@ -199,7 +224,7 @@ A run is **6 races**:
 | 1–5 | Tiered progression, linear chain | Randomly drawn from that tier's rival pool |
 | 6 | Fixed boss race — always the same opponent | "The big guy" — the run's final challenge |
 
-Rivals in races 1–5 are drawn randomly from a pool of **3 rivals per tier** (15 rivals total across 5 tiers). Players won't face the same sequence twice, but rivals have identity — car and behavioural profile. Names TBD. The boss in race 6 is always fixed, making it the known wall every run builds toward. Boss name/identity TBD.
+Rivals in races 1–5 are drawn randomly from a pool of **3 rivals per tier** (15 rivals total across 5 tiers). Players won't face the same sequence twice, but rivals have identity — car and behavioural profile. Names TBD. The boss in race 6 is always fixed: **Ryuji Kaido** — the known wall every run builds toward.
 
 ### Parts System
 
@@ -297,4 +322,4 @@ TBD
 | 5 | ~~Rival identity system?~~ **Resolved:** Named rivals with identity, randomly drawn per tier from a pool. Race 6 is always the fixed boss. | Daniel | — |
 | 6 | ~~Linear vs branching run structure?~~ **Resolved:** Linear 6-race chain — races 1–5 randomised rivals, race 6 fixed boss. | Daniel | — |
 | 7 | ~~Rival pool size?~~ **Resolved:** 3 rivals per tier, 15 total + 1 boss. | Daniel | — |
-| 8 | ~~Boss identity?~~ **Resolved:** Names and identities for all rivals and the boss are TBD — deferred to later design stage. | Daniel | — |
+| 8 | ~~Boss identity?~~ **Resolved:** Boss is **Ryuji Kaido**. All 15 rivals named — mix of Japanese (Initial D) and American (F&F) styles. Car/behavioural profiles TBD. | Daniel | — |
