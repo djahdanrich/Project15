@@ -447,10 +447,39 @@ The 2-axis drift maintenance box is rendered in-world, overlaid on the lower por
 
 | Field | Value |
 |-------|-------|
-| **Music Style** | TBD |
-| **SFX Approach** | TBD |
-| **Voice Over** | TBD |
-| **Reference Titles** | TBD |
+| **Music Style** | Glitch-Eurobeat — high BPM Eurobeat processed through glitch/bitcrush effects |
+| **SFX Style** | Retro 8-bit for UI/events; downsampled real engine recordings for car audio |
+| **Voice Over** | None (out of scope v1.0) |
+| **Reference — Music** | Initial D soundtrack (Eurobeat core), Arca / Crystal Castles (glitch texture) |
+| **Reference — SFX** | Classic arcade racers (OutRun, Ridge Racer) for 8-bit event sounds |
+
+---
+
+### Music
+
+Eurobeat is the correct genre for touge racing — it's literally the Initial D soundtrack DNA. The glitch layer is what makes it distinctly Project 15: tracks sound like Eurobeat that's been run through a broken terminal. Bitcrushing, stuttering, digital artefacts woven into the production rather than applied as an effect. The BPM stays high (140–160) to match the racing energy.
+
+Each race tier could have a distinct track or intensity level. The boss race (Ryuji Kaido) warrants its own track — harder, more distorted, the glitch more aggressive. TBD whether the music reacts dynamically to the drift state (e.g. filter opens up when deep in a drift).
+
+### SFX
+
+**Engine audio:** Real car engine recordings — but downsampled and bitcrushed to match the terminal aesthetic. The engine doesn't sound clean; it sounds like the game is barely holding the audio together. Each car model has a distinct engine profile (rotary vs inline vs boxer). Pitch-shifts with gear and RPM.
+
+**8-bit event sounds:**
+
+| Event | SFX Character |
+|-------|--------------|
+| Drift initiation QTE prompt | Sharp 8-bit blip, rising tone |
+| Clean initiation | Short ascending 8-bit chord |
+| Mistimed initiation / spin out | Descending buzz, flat |
+| In-zone drift | Low looping tone, slightly glitched |
+| Score banked | 8-bit register chime |
+| Gear shift | Crisp click + short pitch pop |
+| Race win | Ascending 8-bit fanfare |
+| Race loss / run over | Descending flatline tone |
+| Part reward | Warm 8-bit notification chord |
+
+**Ambient:** Minimal. Wind noise downsampled to near-noise. Road surface hum. The music carries the atmosphere — ambient SFX stays out of the way.
 
 ---
 
@@ -501,3 +530,5 @@ The 2-axis drift maintenance box is rendered in-world, overlaid on the lower por
 | 8 | ~~Boss identity?~~ **Resolved:** Boss is **Ryuji Kaido**. All 15 rivals named — mix of Japanese (Initial D), American English, and F&F Latino styles. Car/behavioural profiles TBD. | Daniel | — |
 | 9 | ~~Car roster?~~ **Resolved:** 10 cars, fully fictional names. Stern Dreier → Izumi Kei → Edison Kern → Ahura Kaze → Pleiad Arashi → Aichi Raiden → Datsu Gin → Ahura Kaen → Datsu Kumo → Aichi Taiyō. Each name has an obscure real-world connection. | Daniel | — |
 | 10 | ~~Visual upgrades?~~ **Resolved:** Deferred post-MVP. Terminal renderer leaves little room for cosmetic complexity. Mechanical parts only for v1.0. | Daniel | — |
+| 11 | Does music react dynamically to drift state (e.g. filter opens, BPM locks to drift rhythm)? | Daniel | — |
+| 12 | Does each car have a unique engine audio profile, or are cars grouped by drivetrain type (rotary, inline, boxer)? | Daniel | — |
