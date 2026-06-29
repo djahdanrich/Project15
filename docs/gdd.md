@@ -182,17 +182,17 @@ Each tier has a pool of 3 rivals drawn randomly per run. Car and behavioural pro
 |------|---|------|-------|
 | 1 | 1 | Yuta Kondo | Japanese |
 | 1 | 2 | Dex Cruz | American |
-| 1 | 3 | Marco Solis | American |
+| 1 | 3 | Jake Stone | American |
 | 2 | 1 | Kenji Hara | Japanese |
 | 2 | 2 | Rico Vega | American |
 | 2 | 3 | Sho Tanaka | Japanese |
 | 3 | 1 | Naoto Ishida | Japanese |
-| 3 | 2 | Cole Reyes | American |
+| 3 | 2 | Cole Nash | American |
 | 3 | 3 | Hiro Watanabe | Japanese |
 | 4 | 1 | Kazuma Mori | Japanese |
 | 4 | 2 | Ace Dominguez | American |
 | 4 | 3 | Ryo Takase | Japanese |
-| 5 | 1 | Dante Reyes | American |
+| 5 | 1 | Dante Webb | American |
 | 5 | 2 | Haruki Soma | Japanese |
 | 5 | 3 | Taka Nishida | Japanese |
 
@@ -322,4 +322,4 @@ TBD
 | 5 | ~~Rival identity system?~~ **Resolved:** Named rivals with identity, randomly drawn per tier from a pool. Race 6 is always the fixed boss. | Daniel | — |
 | 6 | ~~Linear vs branching run structure?~~ **Resolved:** Linear 6-race chain — races 1–5 randomised rivals, race 6 fixed boss. | Daniel | — |
 | 7 | ~~Rival pool size?~~ **Resolved:** 3 rivals per tier, 15 total + 1 boss. | Daniel | — |
-| 8 | ~~Boss identity?~~ **Resolved:** Boss is **Ryuji Kaido**. All 15 rivals named — mix of Japanese (Initial D) and American (F&F) styles. Car/behavioural profiles TBD. | Daniel | — |
+| 8 | ~~Boss identity?~~ **Resolved:** Boss is **Ryuji Kaido**. All 15 rivals named — mix of Japanese (Initial D), American English, and F&F Latino styles. Car/behavioural profiles TBD. | Daniel | — |
