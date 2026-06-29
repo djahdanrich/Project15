@@ -93,7 +93,7 @@ Race → finish position determines part quality → choose which part to instal
 
 ### Macro Loop
 
-The run is a branching chain of races (OutRun-style road map). Each branch node offers a different difficulty/reward ratio. A completed run ends at a final boss race. Losing any race ends the run immediately — no continues, no saved state. The only carry-forward between runs is player knowledge (track layouts, rival patterns, part synergies).
+The run is a linear chain of 6 races. Races 1–5 each draw a rival randomly from that tier's pool — increasing difficulty and part reward quality as the tier rises. Race 6 is always the boss: a fixed, named opponent who represents the run's definitive skill check. Losing any race ends the run immediately — no continues, no saved state. The only carry-forward between runs is player knowledge (rival patterns, part synergies, boss behaviour).
 
 ---
 
@@ -192,7 +192,14 @@ No persistent power. The only thing that carries between runs is the player's kn
 
 ### Run Structure
 
-A run is **5 races** against rival drivers. The branching structure (linear vs OutRun-style fork) is TBD — see Open Questions.
+A run is **6 races**:
+
+| Race | Structure | Rival |
+|------|-----------|-------|
+| 1–5 | Tiered progression, linear chain | Randomly drawn from that tier's rival pool |
+| 6 | Fixed boss race — always the same opponent | "The big guy" — the run's final challenge |
+
+Rivals in races 1–5 are drawn randomly from a pool assigned to each tier. Players won't face the same sequence twice, but rivals have identity — names, car, and behavioural profile. The boss in race 6 is always fixed, making it the known wall every run builds toward.
 
 ### Parts System
 
@@ -287,5 +294,7 @@ TBD
 | 2 | ~~How many races per run?~~ **Resolved:** 5 races against rivals. Branch structure (linear vs fork) still TBD — see #6. | Daniel | — |
 | 3 | ~~How many part categories?~~ **Resolved:** 5 — Tyres, Engine, Differential, Brakes, ECU. Tier count per category TBD. | Daniel | — |
 | 4 | ~~Does the game have a working title beyond "Project 15"?~~ **Resolved:** "Project 15" is the title — homage to NFS (2015). | Daniel | — |
-| 5 | Is there a rival/opponent identity system (named drivers, recurring characters) or purely mechanical AI? | Daniel | — |
-| 6 | Is the 5-race run structure linear (race 1 → 2 → 3 → 4 → 5) or OutRun-style branching forks? | Daniel | — |
+| 5 | ~~Rival identity system?~~ **Resolved:** Named rivals with identity, randomly drawn per tier from a pool. Race 6 is always the fixed boss. | Daniel | — |
+| 6 | ~~Linear vs branching run structure?~~ **Resolved:** Linear 6-race chain — races 1–5 randomised rivals, race 6 fixed boss. | Daniel | — |
+| 7 | How large is the rival pool per tier? How many named rivals exist in total? | Daniel | — |
+| 8 | Does the boss have a name / identity, or is it defined at a later design stage? | Daniel | — |
