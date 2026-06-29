@@ -1,6 +1,6 @@
-# Game Design Document — Project 15 (working title)
+# Game Design Document — Project 15
 
-> **Status:** Scoping  
+> **Status:** v1.0 Scope Complete  
 > **Last Updated:** 2026-06-29  
 > **Author(s):** Daniel
 
@@ -32,7 +32,7 @@
 
 > *One-paragraph elevator pitch. What is the game, who is it for, and why does it feel good to play?*
 
-Project 15 is a pseudo-3D retro street racer with roguelite progression, built entirely as a code-driven renderer inside a single Godot RichTextLabel — no traditional sprites or 3D meshes, just pure programmatic output. The title is a direct homage to Need for Speed (2015) — that game's dark, grounded street racing tone and no-nonsense attitude are the emotional benchmark. Layered over that is the mountain pass intensity of Initial D. Players start every run with a completely stock car and race through a branching road network in the vein of OutRun. Win a race and you're rewarded with parts — engine upgrades, suspension tuning, visual mods — which you install before the next leg. Lose a race and the run ends: back to the garage, back to stock, start again. The appeal is the compounding tension of a run in progress: every win raises the stakes of what you stand to lose, and the retro terminal aesthetic frames the whole thing like a game running on hardware that probably shouldn't be able to pull it off.
+Project 15 is a pseudo-3D retro street racer with roguelite progression, built entirely as a code-driven renderer inside a single Godot RichTextLabel — no traditional sprites or 3D meshes, just pure programmatic output. The title is a direct homage to Need for Speed (2015) — that game's dark, grounded street racing tone and no-nonsense attitude are the emotional benchmark. Layered over that is the mountain pass intensity of Initial D. Players start every run with a completely stock car and race through a linear chain of 6 touge passes. Win a race and you're rewarded with parts — engine, tyres, brakes, differential, ECU — which you install before the next leg. Lose a race and the run ends: back to the garage, back to stock, start again. The appeal is the compounding tension of a run in progress: every win raises the stakes of what you stand to lose, and the retro terminal aesthetic frames the whole thing like a game running on hardware that probably shouldn't be able to pull it off.
 
 ---
 
@@ -42,7 +42,7 @@ Project 15 is a pseudo-3D retro street racer with roguelite progression, built e
 
 | # | Pillar | Description |
 |---|--------|-------------|
-| 1 | **Every run is earned** | You start stock every time. There is no persistent power between runs — only skill and the parts you win mid-run. |
+| 1 | **Every run is earned** | You start stock every time. No persistent power between runs — only skill, the parts you win mid-run, and the cars you unlock by finishing. |
 | 2 | **Speed is readable** | The pseudo-3D renderer must make velocity feel visceral and legible at a glance, even as pure code output. |
 | 3 | **Parts matter, choices matter** | Each part reward is a meaningful decision. No filler drops — every upgrade should visibly change how the car handles or how fast the run can go. |
 | 4 | **Retro authenticity** | Aesthetically and mechanically, the game should feel like it belongs to the era it references — late 90s/early 2000s street racing culture, no irony. |
@@ -150,7 +150,7 @@ A run is 6 races. Races 1–5 draw a rival from that tier's pool. Race 6 is alwa
 > *What should the player feel at key moments? Write in first-person player voice.*
 
 - **At the start of a session:** "I know this car is slow — but I know what I'm doing this time."
-- **After a win/success:** "That part is going to change everything. Do I take the harder branch?"
+- **After a win/success:** "That part is going to change everything. What do I install before the next one?"
 - **After a loss/failure:** "I was one race away. I know exactly what I did wrong."
 - **After extended play:** "I finally strung together a clean run. The car felt like mine by the end."
 
@@ -434,11 +434,11 @@ A run is **6 races**:
 | 1–5 | Tiered progression, linear chain | Randomly drawn from that tier's rival pool |
 | 6 | Fixed boss race — always the same opponent | "The big guy" — the run's final challenge |
 
-Rivals in races 1–5 are drawn randomly from a pool of **3 rivals per tier** (15 rivals total across 5 tiers). Players won't face the same sequence twice, but rivals have identity — car and behavioural profile. Names TBD. The boss in race 6 is always fixed: **Ryuji Kaido** — the known wall every run builds toward.
+Rivals in races 1–5 are drawn randomly from a pool of **3 rivals per tier** (15 rivals total across 5 tiers). Players won't face the same sequence twice. Each rival has a name, car, and behavioural profile. The boss in race 6 is always fixed: **Ryuji Kaido** — the known wall every run builds toward.
 
 ### Parts System
 
-There are **5 part categories**. Winning a race rewards one or more parts from the pool. The player chooses which to install before the next race.
+There are **5 part categories**. After each race, parts are rolled based on the star rating earned (see Core Gameplay Loop §5). The player chooses which to install before the next race.
 
 | Category | Role |
 |----------|------|
@@ -641,7 +641,7 @@ Each race tier could have a distinct track or intensity level. The boss race (Ry
 | # | Question | Owner | Due |
 |---|----------|-------|-----|
 | 1 | ~~What is the target platform?~~ **Resolved:** Web/HTML5 (itch.io) + Windows/Linux; mobile stretch goal. | Daniel | — |
-| 2 | ~~How many races per run?~~ **Resolved:** 5 races against rivals. Branch structure (linear vs fork) still TBD — see #6. | Daniel | — |
+| 2 | ~~How many races per run?~~ **Resolved:** 6 races — 5 tiered rivals + 1 fixed boss (Ryuji Kaido). Linear chain. | Daniel | — |
 | 3 | ~~How many part categories?~~ **Resolved:** 5 — Tyres, Engine, Differential, Brakes, ECU. Tier count per category TBD. | Daniel | — |
 | 4 | ~~Does the game have a working title beyond "Project 15"?~~ **Resolved:** "Project 15" is the title — homage to NFS (2015). | Daniel | — |
 | 5 | ~~Rival identity system?~~ **Resolved:** Named rivals with identity, randomly drawn per tier from a pool. Race 6 is always the fixed boss. | Daniel | — |
