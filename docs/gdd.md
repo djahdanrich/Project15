@@ -199,7 +199,7 @@ A run is **6 races**:
 | 1–5 | Tiered progression, linear chain | Randomly drawn from that tier's rival pool |
 | 6 | Fixed boss race — always the same opponent | "The big guy" — the run's final challenge |
 
-Rivals in races 1–5 are drawn randomly from a pool assigned to each tier. Players won't face the same sequence twice, but rivals have identity — names, car, and behavioural profile. The boss in race 6 is always fixed, making it the known wall every run builds toward.
+Rivals in races 1–5 are drawn randomly from a pool of **3 rivals per tier** (15 rivals total across 5 tiers). Players won't face the same sequence twice, but rivals have identity — car and behavioural profile. Names TBD. The boss in race 6 is always fixed, making it the known wall every run builds toward. Boss name/identity TBD.
 
 ### Parts System
 
@@ -296,5 +296,5 @@ TBD
 | 4 | ~~Does the game have a working title beyond "Project 15"?~~ **Resolved:** "Project 15" is the title — homage to NFS (2015). | Daniel | — |
 | 5 | ~~Rival identity system?~~ **Resolved:** Named rivals with identity, randomly drawn per tier from a pool. Race 6 is always the fixed boss. | Daniel | — |
 | 6 | ~~Linear vs branching run structure?~~ **Resolved:** Linear 6-race chain — races 1–5 randomised rivals, race 6 fixed boss. | Daniel | — |
-| 7 | How large is the rival pool per tier? How many named rivals exist in total? | Daniel | — |
-| 8 | Does the boss have a name / identity, or is it defined at a later design stage? | Daniel | — |
+| 7 | ~~Rival pool size?~~ **Resolved:** 3 rivals per tier, 15 total + 1 boss. | Daniel | — |
+| 8 | ~~Boss identity?~~ **Resolved:** Names and identities for all rivals and the boss are TBD — deferred to later design stage. | Daniel | — |
