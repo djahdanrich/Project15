@@ -302,20 +302,20 @@ Each tier has a pool of 3 rivals drawn randomly per run. Car and behavioural pro
 
 Car unlocks are the **only** persistent progression between runs. Completing a run unlocks the next car. Each car has different base handling stats — the stock feel is unique per car, which changes which parts you prioritise in a run.
 
-The player starts with a beat-up **Münich M3** (stock, rough around the edges). Completing a run on any car unlocks the next. All car names use fictional manufacturer brands — obviously inspired, not licensed.
+The player starts with a beat-up **Stern Dreier** (stock, rough around the edges). Completing a run on any car unlocks the next. All car names use fictional manufacturer brands — obviously inspired, not licensed.
 
-| # | In-Game Name | Inspired By | Unlock | Base Handling Profile | Parts Priority |
-|---|-------------|-------------|--------|----------------------|----------------|
-| 1 | Münich M3 | BMW M3 | Start | FR, balanced, slightly heavy — forgiving all-rounder | Tyres, Differential |
-| 2 | Handa Civic | Honda Civic | Run 1 | Light, nimble, weak stock engine — angle good, throttle shallow | Engine, ECU |
-| 3 | Forde Focus | Ford Focus RS | Run 2 | Hot hatch feel, responsive, good stock brakes | Differential, Engine |
-| 4 | Kasda MX-5 | Mazda Miata | Run 3 | Lightest car, best stock angle axis, low power ceiling | Engine, Brakes |
-| 5 | Subaro WRX | Subaru WRX | Run 4 | AWD — hardest to initiate drift, very stable once in zone | Brakes, ECU |
-| 6 | Toyoda AE86 | Toyota AE86 | Run 5 | Light, nimble, underpowered — great angle, suffers throttle depth | Engine, ECU |
-| 7 | Missan S15 | Nissan Silvia S15 | Run 6 | Natural FR oversteer — best stock drift platform, average everything else | ECU, Tyres |
-| 8 | Kasda RX-7 | Mazda RX-7 | Run 7 | Rotary engine — high throttle depth ceiling, front-heavy, punishing angle | Differential, Brakes |
-| 9 | Missan Skyline GT-R | Nissan Skyline GT-R | Run 8 | AWD, massive power — hardest initiation, highest speed multiplier | Brakes, Tyres |
-| 10 | Toyoda Supra | Toyota Supra | Run 9 | FR, top-end power monster — hardest angle control, highest score ceiling | Tyres, Differential |
+| # | In-Game Name | Inspired By | Name Logic | Unlock | Base Handling Profile | Parts Priority |
+|---|-------------|-------------|------------|--------|----------------------|----------------|
+| 1 | Stern Dreier | BMW M3 | Stern = star (DE); Dreier = three (DE) | Start | FR, balanced, slightly heavy — forgiving all-rounder | Tyres, Differential |
+| 2 | Izumi Kei | Honda Civic | Izumi = spring (JP); Kei = Japanese car category | Run 1 | Light, nimble, weak stock engine — angle good, throttle shallow | Engine, ECU |
+| 3 | Edison Kern | Ford Focus RS | Edison = American inventor; Kern = core/focus (DE) | Run 2 | Hot hatch feel, responsive, good stock brakes | Differential, Engine |
+| 4 | Ahura Kaze | Mazda Miata | Ahura = Ahura Mazda (deity Mazda named after); Kaze = wind (JP) | Run 3 | Lightest car, best stock angle axis, low power ceiling | Engine, Brakes |
+| 5 | Pleiad Arashi | Subaru WRX | Pleiad = one of the Pleiades (Subaru in JP); Arashi = storm (JP) | Run 4 | AWD — hardest to initiate drift, very stable once in zone | Brakes, ECU |
+| 6 | Aichi Raiden | Toyota AE86 | Aichi = Toyota's prefecture; Raiden = thunder (JP) / Trueno = thunder (ES) | Run 5 | Light, nimble, underpowered — great angle, suffers throttle depth | Engine, ECU |
+| 7 | Datsu Gin | Nissan Silvia S15 | Datsu = from Datsun (Nissan's original brand); Gin = silver (JP) / Silvia = silver (LA) | Run 6 | Natural FR oversteer — best stock drift platform, average everything else | ECU, Tyres |
+| 8 | Ahura Kaen | Mazda RX-7 | Kaen = flame (JP) — rotary engines run notoriously hot | Run 7 | Rotary engine — high throttle depth ceiling, front-heavy, punishing angle | Differential, Brakes |
+| 9 | Datsu Kumo | Nissan Skyline GT-R | Kumo = cloud (JP) — Skyline | Run 8 | AWD, massive power — hardest initiation, highest speed multiplier | Brakes, Tyres |
+| 10 | Aichi Taiyō | Toyota Supra | Taiyō = sun (JP) — the apex, the pinnacle | Run 9 | FR, top-end power monster — hardest angle control, highest score ceiling | Tyres, Differential |
 
 | State | What carries over |
 |-------|------------------|
@@ -497,5 +497,5 @@ The 2-axis drift maintenance box is rendered in-world, overlaid on the lower por
 | 6 | ~~Linear vs branching run structure?~~ **Resolved:** Linear 6-race chain — races 1–5 randomised rivals, race 6 fixed boss. | Daniel | — |
 | 7 | ~~Rival pool size?~~ **Resolved:** 3 rivals per tier, 15 total + 1 boss. | Daniel | — |
 | 8 | ~~Boss identity?~~ **Resolved:** Boss is **Ryuji Kaido**. All 15 rivals named — mix of Japanese (Initial D), American English, and F&F Latino styles. Car/behavioural profiles TBD. | Daniel | — |
-| 9 | ~~Car roster?~~ **Resolved:** 10 cars, fictional brands. Münich M3 (start) → Handa Civic → Forde Focus → Kasda MX-5 → Subaro WRX → Toyoda AE86 → Missan S15 → Kasda RX-7 → Missan Skyline GT-R → Toyoda Supra. | Daniel | — |
+| 9 | ~~Car roster?~~ **Resolved:** 10 cars, fully fictional names. Stern Dreier → Izumi Kei → Edison Kern → Ahura Kaze → Pleiad Arashi → Aichi Raiden → Datsu Gin → Ahura Kaen → Datsu Kumo → Aichi Taiyō. Each name has an obscure real-world connection. | Daniel | — |
 | 10 | Do visual part upgrades (body kit, spoiler, wheels) exist alongside mechanical parts, or does the silhouette update when mechanical parts are installed? | Daniel | — |
