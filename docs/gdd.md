@@ -110,19 +110,81 @@ The run is a linear chain of 6 races. Races 1–5 each draw a rival randomly fro
 
 ## 7. Game Mechanics
 
-> *Detail each mechanic: what it is, how it works, and why it serves the core pillars.*
+### 7.1 — Touge Race Structure
 
-### 7.1 — [Mechanic Name]
+**What:** Each race is a solo mountain pass run against a ghost. No opponent car on the road — the rival is represented by their ghost time and drift score to beat.
 
-**What:** TBD  
-**How:** TBD  
-**Why:** TBD
+**How:** The player must finish the pass within the ghost's time AND meet or exceed the ghost's drift score. Both conditions must be met to win. Missing either ends the run.
 
-### 7.2 — [Mechanic Name]
+**Why:** The dual win condition creates genuine tension — going flat-out ignores scoring, grinding for drifts bleeds time. Every corner is a micro-decision.
 
-**What:** TBD  
-**How:** TBD  
-**Why:** TBD
+---
+
+### 7.2 — Drift Initiation (QTE)
+
+**What:** Entering a corner triggers a quick time event to initiate the drift.
+
+**How:** As the corner approaches, a prompt appears. The player must press the handbrake (action button) + the correct turn direction within the timing window. The score awarded for initiation scales with:
+- **Timing accuracy** — how close to the ideal initiation point
+- **Entry speed** — faster entry = higher score multiplier (governed by Engine part)
+- **Braking input** — correct brake pressure widens the timing window (governed by Brakes part)
+
+A clean initiation transitions immediately into the drift maintenance phase. A mistimed initiation either understeers (wasted corner, time loss) or spins out (race over).
+
+**Why:** Replaces the need for 3D physics. The QTE is the "turn-in" moment — the skill expression lives in the timing, not in analog stick precision.
+
+---
+
+### 7.3 — Drift Maintenance (Balance Minigame)
+
+**What:** Once a drift is initiated, the player holds it through the corner by keeping an angle indicator inside a moving sweet spot — inspired by the Stardew Valley fishing minigame.
+
+**How:** A balance bar appears on screen. An angle marker drifts left or right — the player taps left/right inputs to keep it inside the sweet spot zone. 
+
+- **Stay in zone** → score accumulates per frame, drift continues
+- **Drift to edge** → score stops, warning state
+- **Exit zone entirely** → spin out, race over
+- **Exit corner naturally** → drift ends, score is banked
+
+The sweet spot zone width and marker drift speed are governed by parts:
+
+| Part | Effect on Maintenance |
+|------|-----------------------|
+| Tyres | Wider sweet spot zone |
+| Differential | Slower marker drift (more forgiving corrections) |
+| ECU | Score multiplier on all points banked from this drift |
+
+**Why:** Keeps the player actively engaged through the corner without requiring spatial physics. The rhythm of tapping to hold an angle mirrors the real feel of counter-steering a drift.
+
+---
+
+### 7.4 — Scoring
+
+**What:** Drift score is accumulated across all corners in a run and must meet the ghost's threshold to win.
+
+**How:** Each drift banks a score calculated as:
+
+```
+Initiation Score (timing × entry speed) + Maintenance Score (time in zone × ECU multiplier)
+```
+
+Chained drifts (consecutive corners without fully straightening) apply a combo multiplier (TBD scaling). Final run score is the sum of all banked drifts.
+
+**Why:** Rewards both precision (clean initiation) and endurance (holding the drift long and clean through the corner).
+
+---
+
+### 7.5 — How Parts Affect Mechanics (Summary)
+
+| Part | Initiation Effect | Maintenance Effect |
+|------|------------------|-------------------|
+| **Tyres** | — | Wider sweet spot zone |
+| **Engine** | Higher entry speed multiplier | — |
+| **Differential** | — | Slower angle marker drift |
+| **Brakes** | Wider QTE timing window | — |
+| **ECU** | — | Score multiplier on banked drifts |
+
+Higher-tier parts improve the same parameters — they don't unlock new mechanics, they make the existing mechanics more forgiving and rewarding.
 
 ---
 
@@ -243,6 +305,17 @@ Each category has multiple tiers (exact count TBD). Higher-tier parts drop from 
 ---
 
 ## 12. UI / UX
+
+### Input / Control Scheme
+
+Max 8 inputs: 4-directional d-pad + 4 action buttons. Designed for on-screen touch controls (mobile) with keyboard equivalents.
+
+| Input | Action |
+|-------|--------|
+| Left / Right | Steer |
+| Up / Down | Accelerate / Brake |
+| Action 1 | Handbrake (drift initiation) |
+| Action 2–4 | TBD |
 
 ### HUD Elements
 
