@@ -217,16 +217,36 @@ Higher-tier parts improve the same parameters — they don't unlock new mechanic
 
 | Field | Value |
 |-------|-------|
-| **Setting / Era** | TBD |
-| **Tone** | TBD |
-| **World Size** | TBD |
-| **Is the world static or dynamic?** | TBD |
+| **Setting / Era** | Contemporary Japan — night, urban fringes and mountain passes |
+| **Tone** | Dark, atmospheric, grounded — NFS 2015 urban edge meets Initial D mountain isolation |
+| **World Size** | 6 distinct tracks, one per race position (fixed order) |
+| **Static or Dynamic** | Static — tracks are always in the same order; rivals are randomised |
 
-### Key Locations
+Tracks are fixed per race position. Players learn the roads across runs — the road is the constant, the opponent is the variable. Each track has a distinct visual character expressed through the terminal renderer's environment elements.
 
-| Location | Description | Purpose in Gameplay |
-|----------|-------------|---------------------|
-| TBD | | |
+---
+
+### Tracks
+
+| Race | Track | Type | Character |
+|------|-------|------|-----------|
+| 1 | **Kasumi Pass** | Mountain touge | Wide, open, mist-covered — forgiving intro. Pine forest both sides, open night sky. |
+| 2 | **Minato Circuit** | Flat docklands circuit | Port/harbour industrial setting. Flat sweeping corners and chicanes — no elevation. Cranes, containers, wet tarmac. NFS urban energy. |
+| 3 | **Kage Bridge** | Urban/industrial | Bridges and underpasses, concrete barriers, overpasses. Mixed urban and mountain transition. |
+| 4 | **Yurei Gorge** | Technical touge | Dense hairpins, fast rhythm. Tight treeline, cliff drop on the outside edge. |
+| 5 | **Mine Expressway** | High-speed summit | Open mountain summit, wide road, long straights. Fewer corners = must push deep on every drift to hit score threshold. |
+| 6 | **Kurayami** | Boss — legendary descent | Ryuji Kaido's home road. Combines everything: hairpins, tunnel sections, cliff straight, final hairpin. The hardest and most complete track. |
+
+### Renderer Environment Elements Per Track
+
+| Track | Road Shape | Key Elements |
+|-------|-----------|--------------|
+| Kasumi Pass | Gentle curves, wide | Treeline, open sky, mist character (soft colour wash) |
+| Minato Circuit | Flat chicanes, sweepers | Container stacks, crane silhouettes, wet road sheen, low horizon |
+| Kage Bridge | Mixed rhythm | Overpass arches, concrete walls, urban light spill |
+| Yurei Gorge | Tight hairpins | Dense treeline, cliff edge guardrail, narrow road width |
+| Mine Expressway | Long straights, fast sweepers | Open sky, minimal environment, summit exposure |
+| Kurayami | All types combined | Tunnel mouth arches, cliff drop, guardrails, treeline — full renderer palette |
 
 ---
 
