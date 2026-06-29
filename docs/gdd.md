@@ -1,4 +1,4 @@
-# Game Design Document — Project 15
+# Game Design Document — Project 15 (working title)
 
 > **Status:** Scoping  
 > **Last Updated:** 2026-06-29  
@@ -32,7 +32,7 @@
 
 > *One-paragraph elevator pitch. What is the game, who is it for, and why does it feel good to play?*
 
-Project 15 is a pseudo-3D retro street racer with roguelite progression, built entirely as a code-driven renderer inside a single Godot RichTextLabel — no traditional sprites or 3D meshes, just pure programmatic output. Inspired by the late-night mountain pass drama of Initial D and the neon-drenched tuner culture of Need for Speed Underground, players start every run with a completely stock car and race through a branching road network in the vein of OutRun. Win a race and you're rewarded with parts — engine upgrades, suspension tuning, visual mods — which you install before the next leg. Lose a race and the run ends: back to the garage, back to stock, start again. The appeal is the compounding tension of a run in progress: every win raises the stakes of what you stand to lose, and the retro terminal aesthetic frames the whole thing like a game running on hardware that probably shouldn't be able to pull it off.
+Project 15 is a pseudo-3D retro street racer with roguelite progression, built entirely as a code-driven renderer inside a single Godot RichTextLabel — no traditional sprites or 3D meshes, just pure programmatic output. The title is a direct homage to Need for Speed (2015) — that game's dark, grounded street racing tone and no-nonsense attitude are the emotional benchmark. Layered over that is the mountain pass intensity of Initial D. Players start every run with a completely stock car and race through a branching road network in the vein of OutRun. Win a race and you're rewarded with parts — engine upgrades, suspension tuning, visual mods — which you install before the next leg. Lose a race and the run ends: back to the garage, back to stock, start again. The appeal is the compounding tension of a run in progress: every win raises the stakes of what you stand to lose, and the retro terminal aesthetic frames the whole thing like a game running on hardware that probably shouldn't be able to pull it off.
 
 ---
 
@@ -69,13 +69,13 @@ Project 15 is a pseudo-3D retro street racer with roguelite progression, built e
 |-------|-------|
 | **Age Range** | 18–35 (nostalgia-driven); secondary 16–24 (retro aesthetic enthusiasts) |
 | **Player Archetypes** | Car culture fans, roguelite players, demoscene / terminal aesthetic appreciators |
-| **Comparable Titles** | OutRun (1986), Initial D Arcade Stage, NFS Underground 1 & 2, Road Rash, Burnout Legends |
+| **Comparable Titles** | OutRun (1986), Initial D Arcade Stage, Need for Speed (2015), Road Rash, Burnout Legends |
 
 ### Positioning
 
 > *How does this game sit relative to its comparables? What does it do differently?*
 
-Where OutRun is an endless joyride and NFS Underground is a story-driven tuner fantasy, Project 15 fuses both with roguelite stakes — every run is a fresh attempt at a perfect chain of races and part rewards. The terminal/code-driven renderer is the key differentiator: it deliberately looks like something running inside a dev console, which is both a technical constraint and a core aesthetic identity no direct competitor shares.
+Where OutRun is an endless joyride and NFS (2015) is a story-driven street racing drama, Project 15 fuses both with roguelite stakes — every run is a fresh attempt at a perfect chain of races and part rewards. The title is a direct nod to NFS 2015. The terminal/code-driven renderer is the key differentiator: it deliberately looks like something running inside a dev console, which is both a technical constraint and a core aesthetic identity no direct competitor shares.
 
 ---
 
@@ -276,5 +276,5 @@ TBD
 | 1 | What is the target platform — PC only, or also mobile/web? | Daniel | — |
 | 2 | How many races in a full run / how deep is the OutRun branch tree? | Daniel | — |
 | 3 | How many parts categories are there and how granular is the upgrade system? | Daniel | — |
-| 4 | Does the game have a working title beyond "Project 15"? | Daniel | — |
+| 4 | ~~Does the game have a working title beyond "Project 15"?~~ **Resolved:** "Project 15" is the title — homage to NFS (2015). | Daniel | — |
 | 5 | Is there a rival/opponent identity system (named drivers, recurring characters) or purely mechanical AI? | Daniel | — |
