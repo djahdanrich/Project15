@@ -192,7 +192,7 @@ Each tier has a pool of 3 rivals drawn randomly per run. Car and behavioural pro
 | 4 | 1 | Kazuma Mori | Japanese |
 | 4 | 2 | Ace Dominguez | American |
 | 4 | 3 | Ryo Takase | Japanese |
-| 5 | 1 | Dante Webb | American |
+| 5 | 1 | Cain Mercer | American |
 | 5 | 2 | Haruki Soma | Japanese |
 | 5 | 3 | Taka Nishida | Japanese |
 
