@@ -2,7 +2,7 @@
 
 > **Status:** Scoping  
 > **Last Updated:** 2026-06-29  
-> **Author(s):** TBD
+> **Author(s):** Daniel
 
 ---
 
@@ -32,7 +32,7 @@
 
 > *One-paragraph elevator pitch. What is the game, who is it for, and why does it feel good to play?*
 
-TBD
+Project 15 is a pseudo-3D retro street racer with roguelite progression, built entirely as a code-driven renderer inside a single Godot RichTextLabel — no traditional sprites or 3D meshes, just pure programmatic output. Inspired by the late-night mountain pass drama of Initial D and the neon-drenched tuner culture of Need for Speed Underground, players start every run with a completely stock car and race through a branching road network in the vein of OutRun. Win a race and you're rewarded with parts — engine upgrades, suspension tuning, visual mods — which you install before the next leg. Lose a race and the run ends: back to the garage, back to stock, start again. The appeal is the compounding tension of a run in progress: every win raises the stakes of what you stand to lose, and the retro terminal aesthetic frames the whole thing like a game running on hardware that probably shouldn't be able to pull it off.
 
 ---
 
@@ -42,9 +42,10 @@ TBD
 
 | # | Pillar | Description |
 |---|--------|-------------|
-| 1 | TBD | |
-| 2 | TBD | |
-| 3 | TBD | |
+| 1 | **Every run is earned** | You start stock every time. There is no persistent power between runs — only skill and the parts you win mid-run. |
+| 2 | **Speed is readable** | The pseudo-3D renderer must make velocity feel visceral and legible at a glance, even as pure code output. |
+| 3 | **Parts matter, choices matter** | Each part reward is a meaningful decision. No filler drops — every upgrade should visibly change how the car handles or how fast the run can go. |
+| 4 | **Retro authenticity** | Aesthetically and mechanically, the game should feel like it belongs to the era it references — late 90s/early 2000s street racing culture, no irony. |
 
 ---
 
@@ -52,12 +53,13 @@ TBD
 
 | Field | Value |
 |-------|-------|
-| **Primary Genre** | TBD |
-| **Sub-genre(s)** | TBD |
+| **Primary Genre** | Racing |
+| **Sub-genre(s)** | Roguelite, Pseudo-3D, Arcade Racer |
 | **Platform(s)** | TBD |
-| **Engine** | TBD |
+| **Engine** | Godot 4 |
+| **Rendering Architecture** | Single RichTextLabel — fully code-driven pseudo-3D renderer |
 | **Target Resolution / Frame Rate** | TBD |
-| **Single / Multiplayer** | TBD |
+| **Single / Multiplayer** | Single-player |
 
 ---
 
@@ -65,33 +67,33 @@ TBD
 
 | Field | Value |
 |-------|-------|
-| **Age Range** | TBD |
-| **Player Archetypes** | TBD |
-| **Comparable Titles** | TBD |
+| **Age Range** | 18–35 (nostalgia-driven); secondary 16–24 (retro aesthetic enthusiasts) |
+| **Player Archetypes** | Car culture fans, roguelite players, demoscene / terminal aesthetic appreciators |
+| **Comparable Titles** | OutRun (1986), Initial D Arcade Stage, NFS Underground 1 & 2, Road Rash, Burnout Legends |
 
 ### Positioning
 
 > *How does this game sit relative to its comparables? What does it do differently?*
 
-TBD
+Where OutRun is an endless joyride and NFS Underground is a story-driven tuner fantasy, Project 15 fuses both with roguelite stakes — every run is a fresh attempt at a perfect chain of races and part rewards. The terminal/code-driven renderer is the key differentiator: it deliberately looks like something running inside a dev console, which is both a technical constraint and a core aesthetic identity no direct competitor shares.
 
 ---
 
 ## 5. Core Gameplay Loop
 
 ```
-[ACTION] → [FEEDBACK] → [REWARD] → [DECISION] → back to [ACTION]
+[RACE] → [WIN / LOSE] → [PART REWARD] → [INSTALL / SKIP] → [NEXT RACE]
+                 ↓ lose
+           [GAME OVER — back to stock]
 ```
-
-> *Describe the micro loop (session-to-session) and macro loop (overall progression arc).*
 
 ### Micro Loop
 
-TBD
+Race → finish position determines part quality → choose which part to install before the next race begins. Each race segment is a single road stretch against one or more rival cars using the pseudo-3D renderer.
 
 ### Macro Loop
 
-TBD
+The run is a branching chain of races (OutRun-style road map). Each branch node offers a different difficulty/reward ratio. A completed run ends at a final boss race. Losing any race ends the run immediately — no continues, no saved state. The only carry-forward between runs is player knowledge (track layouts, rival patterns, part synergies).
 
 ---
 
@@ -99,10 +101,10 @@ TBD
 
 > *What should the player feel at key moments? Write in first-person player voice.*
 
-- **At the start of a session:** TBD
-- **After a win/success:** TBD
-- **After a loss/failure:** TBD
-- **After extended play:** TBD
+- **At the start of a session:** "I know this car is slow — but I know what I'm doing this time."
+- **After a win/success:** "That part is going to change everything. Do I take the harder branch?"
+- **After a loss/failure:** "I was one race away. I know exactly what I did wrong."
+- **After extended play:** "I finally strung together a clean run. The car felt like mine by the end."
 
 ---
 
@@ -271,4 +273,8 @@ TBD
 
 | # | Question | Owner | Due |
 |---|----------|-------|-----|
-| 1 | TBD | | |
+| 1 | What is the target platform — PC only, or also mobile/web? | Daniel | — |
+| 2 | How many races in a full run / how deep is the OutRun branch tree? | Daniel | — |
+| 3 | How many parts categories are there and how granular is the upgrade system? | Daniel | — |
+| 4 | Does the game have a working title beyond "Project 15"? | Daniel | — |
+| 5 | Is there a rival/opponent identity system (named drivers, recurring characters) or purely mechanical AI? | Daniel | — |
