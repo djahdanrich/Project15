@@ -485,12 +485,7 @@ Each race tier could have a distinct track or intensity level. The boss race (Ry
 
 ## 15. Monetisation
 
-| Field | Value |
-|-------|-------|
-| **Business Model** | TBD |
-| **Price Point** | TBD |
-| **DLC / Expansion Plans** | TBD |
-| **Platform Revenue Share** | TBD |
+> **Deferred.** Focus is on building the game. Monetisation to be decided once v1.0 is complete. Likely itch.io release — pay-what-you-want or one-time purchase are the natural options for that platform.
 
 ---
 
