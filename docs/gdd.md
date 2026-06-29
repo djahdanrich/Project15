@@ -147,24 +147,36 @@ A clean sequence transitions into drift maintenance. A mistimed sequence either 
 
 **What:** Once a drift is initiated, the player holds it through the corner by keeping an angle indicator inside a moving sweet spot — inspired by the Stardew Valley fishing minigame.
 
-**How:** A balance bar appears. An angle marker drifts based on the car's momentum. The player taps **Accelerate** to push the marker one way (more throttle = more angle) and uses **Left/Right** d-pad to correct direction and pull the marker back. The goal is to keep the marker inside the sweet spot zone.
+**How:** The maintenance phase uses **two simultaneous axes** displayed as a 2D zone in the RichTextLabel — a reticle the player keeps inside a box.
 
-- **Stay in zone** → score accumulates, drift holds
-- **Drift to edge** → score pauses, warning state
-- **Exit zone** → spin out, run over
-- **Exit corner cleanly** → drift ends, score banked
+| Axis | Input | Controls |
+|------|-------|----------|
+| **X — Steering Angle** | D-pad Left / Right | How much counter-steer is applied — keeps the car pointed along the road |
+| **Y — Throttle Depth** | Accelerate (taps) | How hard the throttle is pushed — controls rear wheel spin and drift angle |
 
-The accelerator is the primary input — it controls rear wheel traction and therefore drift angle, which is mechanically authentic. Left/Right is the coarser correction to keep the car pointing the right way.
+**The axes push against each other.** More throttle (Y axis deeper) forces the angle (X axis) to swing out further and faster — harder to hold, but higher points per frame. The player chooses how deep to push the throttle and takes on the corresponding steering challenge.
 
-The sweet spot zone and marker behaviour are governed by parts:
+```
+Points per frame = base_rate × angle_depth_multiplier × throttle_depth_multiplier
+```
 
-| Part | Effect on Maintenance |
-|------|-----------------------|
-| Tyres | Wider sweet spot zone |
-| Differential | Slower marker drift (more forgiving to hold) |
-| ECU | Score multiplier on all points banked |
+Max points = deep throttle + sharp angle + staying in zone. The zone shrinks as throttle depth increases — the risk/reward is live and continuous, not a one-time decision.
 
-**Why:** The throttle IS the drift in real life — feathering it is what holds the angle. Mapping the fishing minigame to the accelerator rather than left/right makes every tap feel purposeful and grounded.
+**Zone states:**
+- **Reticle in zone** → score accumulates, drift holds
+- **Reticle at edge** → score pauses, warning
+- **Reticle exits zone** → spin out, run over
+- **Corner exit** → drift ends cleanly, score banked
+
+Parts affect each axis independently:
+
+| Part | Effect |
+|------|--------|
+| Tyres | Wider zone on the X axis (steering angle more forgiving) |
+| Differential | Y axis movement is slower (throttle depth easier to hold) |
+| ECU | Score multiplier on all points banked from this drift |
+
+**Why:** Two axes interacting creates genuine skill expression — the player is constantly deciding how much risk to carry. A cautious run with shallow throttle is safe but won't beat a high-scoring ghost. A deep-throttle run is max points but punishing. That tension is the game.
 
 ---
 
@@ -175,10 +187,13 @@ The sweet spot zone and marker behaviour are governed by parts:
 **How:** Each drift banks a score calculated as:
 
 ```
-Initiation Score (timing × entry speed) + Maintenance Score (time in zone × ECU multiplier)
+Initiation Score (timing × entry speed)
++ Maintenance Score (time in zone × angle_depth × throttle_depth × ECU multiplier)
 ```
 
 Chained drifts (consecutive corners without fully straightening) apply a combo multiplier (TBD scaling). Final run score is the sum of all banked drifts.
+
+The throttle depth multiplier is the primary scoring lever — a player who pushes deep on every corner will outscore a cautious player even with fewer clean drifts. This means beating a high-tier ghost's score requires intentional risk-taking, not just clean execution.
 
 **Why:** Rewards both precision (clean initiation) and endurance (holding the drift long and clean through the corner).
 
