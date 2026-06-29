@@ -400,7 +400,7 @@ TBD
 
 The car ASCII silhouette is the primary visual element — it sits large and centred in the frame. The road and environment exist to give it context and convey speed, not the other way around. The player must be able to recognise a Silvia from an RX-7 from an AE86 at a glance. Each car model has a distinct multi-line ASCII side-profile built from RichTextLabel BBCode characters.
 
-Car silhouettes are coloured using the soft palette — the car's body colour is the dominant warm tone on screen. As parts are installed, the silhouette updates: a new spoiler appears, wider tyres, body kit lines. The car visually reflects its build state.
+Car silhouettes are coloured using the soft palette — the car's body colour is the dominant warm tone on screen. Visual upgrades (spoilers, body kits) are post-MVP; the silhouette is fixed per car for v1.0.
 
 ---
 
@@ -479,7 +479,9 @@ The 2-axis drift maintenance box is rendered in-world, overlaid on the lower por
 
 > *Explicitly list features that are NOT in the initial release to prevent scope creep.*
 
-- TBD
+- Visual / cosmetic part upgrades (body kits, spoilers, wheel changes)
+- Multiplayer of any kind
+- Story mode / cutscenes / voiced narrative
 
 ---
 
@@ -498,4 +500,4 @@ The 2-axis drift maintenance box is rendered in-world, overlaid on the lower por
 | 7 | ~~Rival pool size?~~ **Resolved:** 3 rivals per tier, 15 total + 1 boss. | Daniel | — |
 | 8 | ~~Boss identity?~~ **Resolved:** Boss is **Ryuji Kaido**. All 15 rivals named — mix of Japanese (Initial D), American English, and F&F Latino styles. Car/behavioural profiles TBD. | Daniel | — |
 | 9 | ~~Car roster?~~ **Resolved:** 10 cars, fully fictional names. Stern Dreier → Izumi Kei → Edison Kern → Ahura Kaze → Pleiad Arashi → Aichi Raiden → Datsu Gin → Ahura Kaen → Datsu Kumo → Aichi Taiyō. Each name has an obscure real-world connection. | Daniel | — |
-| 10 | Do visual part upgrades (body kit, spoiler, wheels) exist alongside mechanical parts, or does the silhouette update when mechanical parts are installed? | Daniel | — |
+| 10 | ~~Visual upgrades?~~ **Resolved:** Deferred post-MVP. Terminal renderer leaves little room for cosmetic complexity. Mechanical parts only for v1.0. | Daniel | — |
