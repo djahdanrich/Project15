@@ -82,18 +82,66 @@ Where OutRun is an endless joyride and NFS (2015) is a story-driven street racin
 ## 5. Core Gameplay Loop
 
 ```
-[RACE] → [WIN / LOSE] → [PART REWARD] → [INSTALL / SKIP] → [NEXT RACE]
-                 ↓ lose
-           [GAME OVER — back to stock]
+[RIVAL CARD] → [CAR REVIEW] → [RACE INTRO] → [RACE]
+                                                  ↓ win
+                                            [STAR RATING]
+                                                  ↓
+                                            [PART ROLL]
+                                            1★ → 3 parts rolled, pick 1
+                                            2★ → 6 parts rolled, pick 2
+                                            3★ → 9 parts rolled, pick 3
+                                                  ↓
+                                            [UPGRADE SCREEN]
+                                                  ↓
+                                            [RIVAL CARD] (next race)
+                                                  ↓ lose (any race)
+                                            [GAME OVER CARD]
+                                            back to stock → [MAIN MENU]
 ```
 
-### Micro Loop
+### Screen-by-Screen Loop
 
-Race → finish position determines part quality → choose which part to install before the next race begins. Each race segment is a single road stretch against one or more rival cars using the pseudo-3D renderer.
+**1. Rival Card**
+Pre-race screen. Run history log, rival ASCII portrait, rival flavour text (typewriter effect). Sets the stakes — you know who you're about to race and what they think of you.
+
+**2. Car Review Screen**
+Your machine, before every race. Full ASCII car portrait, current installed parts listed, base stats. Equivalent to the Pokémon Stadium party screen — a moment to appreciate the build and feel the weight of what you've assembled. Read-only; no changes made here.
+
+**3. Race Intro**
+Brief track name, tier, and ghost target (time + score to beat) displayed before the renderer kicks in. One to two seconds — just enough to prime the player.
+
+**4. The Race**
+Pseudo-3D touge run. Full drift mechanic. Beat the ghost's time and score threshold to win.
+
+**5. Star Rating**
+Awarded on win based on how far the drift score exceeds the ghost's threshold:
+
+| Stars | Condition |
+|-------|-----------|
+| ★☆☆ | Beat the threshold — scraped through |
+| ★★☆ | Exceeded threshold by a meaningful margin |
+| ★★★ | Crushed it — deep throttle, clean drifts throughout |
+
+**6. Part Roll**
+Parts drawn randomly from the current tier's pool. Star rating determines how many are rolled and how many the player keeps:
+
+| Rating | Parts Rolled | Parts Kept |
+|--------|-------------|------------|
+| 1 star | 3 | 1 |
+| 2 stars | 6 | 2 |
+| 3 stars | 9 | 3 |
+
+Higher tier races roll from a higher quality pool. The player sees all rolled parts and selects — they always get to choose, never receive blind.
+
+**7. Upgrade Screen**
+Install screen. Chosen parts are shown against the car's current build. Player confirms installs. Parts are permanent for the run.
+
+**8. Back to Rival Card**
+Next rival drawn from the tier pool. Loop repeats until Race 6 (Ryuji Kaido) or a loss.
 
 ### Macro Loop
 
-The run is a linear chain of 6 races. Races 1–5 each draw a rival randomly from that tier's pool — increasing difficulty and part reward quality as the tier rises. Race 6 is always the boss: a fixed, named opponent who represents the run's definitive skill check. Losing any race ends the run immediately — no continues, no saved state. The only carry-forward between runs is player knowledge (rival patterns, part synergies, boss behaviour).
+A run is 6 races. Races 1–5 draw a rival from that tier's pool. Race 6 is always Ryuji Kaido. Losing any race ends the run immediately — no continues, no saved state. The only carry-forward between runs is player knowledge and any car unlocks earned.
 
 ---
 
@@ -423,14 +471,19 @@ Max 8 inputs: 4-directional d-pad + 4 action buttons. Designed for on-screen tou
 
 ```
 [Main Menu]
-    → [Car Select / Garage]
-        → [Pre-Race Card]
-            → rival portrait + run history + flavour text
+    → [Car Select]
+        → [Rival Card]         — run history + rival portrait + flavour text
+        → [Car Review]         — your build, parts installed, read-only
+        → [Race Intro]         — track name + ghost targets (time + score)
         → [Race]
-            → win  → [Part Reward Screen] → [Pre-Race Card] (next rival)
-            → lose → [Post-Loss Card]
-                        → rival portrait + victory text + run summary
-                     → [Main Menu / Retry]
+              ↓ win
+          [Star Rating]        — 1 / 2 / 3 stars vs ghost score threshold
+          [Part Roll]          — 3 / 6 / 9 parts rolled; pick 1 / 2 / 3
+          [Upgrade Screen]     — install chosen parts, confirm build
+          [Rival Card]         — next rival, loop continues
+              ↓ lose
+          [Game Over Card]     — rival victory text + run summary
+          [Main Menu]
 ```
 
 ### Pre-Race Card
